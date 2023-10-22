@@ -1,15 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA_Compatible" content="IE-edge">
-        <meta name="viewport" content="width-device-width,initial-scale=1.0">
-        <title>
-            My Portfolio 
-        </title>
-        <link rel="stylesheet" href="Style.css">
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA_Compatible" content="IE-edge">
+    <meta name="viewport" content="width-device-width,initial-scale=1.0">
+    <title>
+        My Portfolio 
+    </title>
+    <link rel="stylesheet" href="Style.css">
         
-    </body>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="Images/Logo1.jpg" class="logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Sofware Developer</p>
+                <h1>Hi,I'm <span>Mohamed</span><br>Abu Fareed from India </h1>
+            </div>
+        </div>
+    </div>
+    <!-- -------------About----------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="Images/user1.jpeg" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>I always work on the 80/20 principle.I strive to keep my
+                        hourly productivity to the maximum.I also thrive in crisis
+                        management.Proof of concept is another cornerstone in
+                        my work ethic as I believe the proof of producing the
+                        output in any field of work is the key to success.
+                    </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Project</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Java</span><br>Software development tools</li>
+                            <li><span>Web Development</span><br>Frontend development tools HTML , CSS and JQuery</li>
+                            <li><span>Python</span><br>Python development tools</li>
+                            <li><span>SQL</span><br>Data extraction and Data analysis</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Portfolio</span><br>Created my own portfolio</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2023</span><br>Core Java - Internshala Trainings</li>
+                            <li><span>2023</span><br>Web design - Udemy</li>
+                            <li><span>2023</span><br>BTech in Biotechnology - KCT , Coimbatore</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        
+        function opentab(tabname)
+        {
+            for(tablink of tablinks)
+            {
+                tablink.classList.remove("active-link");
+            }  
+            for(tabcontent of tabcontents)
+            {
+                tabcontent.classList.remove("active-tab");
+            } 
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+    </script>
+
+        
+</body>
 </html>
